@@ -4,7 +4,7 @@
 .navbar{
     background-color: #1A1A1A;
     padding: 10px 20px;
-    position: fixed;
+    /*position: fixed;*/
     width: 100vw;
 }
 
