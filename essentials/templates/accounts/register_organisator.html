@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+     
+<div class="row">
+    <div class="mx-auto col-lg-6 col-md-10">
+        <div class="login-wrapper">
+            <img src="../../static/imgs/corner3.svg" class="corner-top" alt="" />
+            <img src="../../static/imgs/corner4.svg" class="corner-bottom" alt="" />
+            <form class="login-form" method="POST">
+
+            {% csrf_token %}
+          
+            <div class="signup-title-organiser">Become an <br /><b>Organiser</b></div>
+            <div class="login-inputs-container">
+              <div class="d-flex flex-row gap-3">
+                <input
+              type="text"
+              placeholder="Name"
+              class="login-input"
+              id="login-email-input"
+            />
+            <input
+              type="text"
+              placeholder="Surname"
+              class="login-input"
+              id="login-text-input"
+            />
+              </div>
+              <input
+              type="tel"
+              placeholder="Phone number"
+              class="login-input"
+              id="login-text-input"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              class="login-input"
+              id="login-email-input"
+            />
+            <input
+            type="password"
+            placeholder="Surname"
+            class="login-input"
+            id="login-password-input"
+          />
+        </div>
+            <button type="submit" class="btn account-button">
+                Sign up
+            </button>
+            <div class="login-link">
+              Already a member? <a
+                  href="{% url "users:login" %}">Login here</a>
+          </div>  
+        </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

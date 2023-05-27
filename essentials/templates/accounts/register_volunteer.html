@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-lg-6 col-md-10 mx-auto">
+            <div class="login-wrapper">
+                <img src="../../static/imgs/corner1.svg" class="corner-bottom" alt="" />
+                <img src="../../static/imgs/corner2.svg" class="corner-top" alt="" />
+            <form class="signup-form" method="POST">
+                {% csrf_token %}
+                <div class="signup-title">Become a <br /><b>Volunteer</b></div>
+              <div class="signup-inputs-container">
+                <div>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  class="login-input"
+                  id="login-name-input"
+                  name="name"
+                />
+                <input
+                  type="text"
+                  placeholder="Surname"
+                  class="login-input"
+                  id="login-surname-input"
+                  name="surname"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="login-input"
+                  id="login-email-input"
+                  name="email"
+                  required
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  class="login-input"
+                  id="login-password-input"
+                  name="password"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="tel"
+                  placeholder="Phone number"
+                  class="login-input"
+                  id="login-tel-input"
+                  name="phone"
+                />
+                <input
+                  type="text"
+                  placeholder="Skills"
+                  class="login-input"
+                  id="login-skills-input"
+                  name="skills"
+                />
+                <select class="login-input" aria-label="Default select example">
+                  <option selected>None</option>
+                  <option value="1">Less than a year</option>
+                  <option value="2">Up to five years</option>
+                  <option value="3">More than five years</option>
+                </select>
+              </div>
+            </div>
+                <button type="submit" class="login-next">Sign up</button>
+                <div class="signup-link">
+                    Already a member? <a
+                        href="{% url "users:login" %}">Login here</a>
+                </div>                  
+            </form>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

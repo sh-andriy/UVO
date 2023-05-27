@@ -171,4 +171,162 @@
 
 .photoesCarusel img{
     margin-top: 20px;
-}
+}/*===========================LOGIN/SIGNUP PAGES=====================================================*/
+* {
+    font-family: "Montserrat";
+  }
+  
+  .login-wrapper {
+    box-sizing: border-box;
+    padding: 36px 0 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.17);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .corner-bottom {
+    position: absolute;
+    bottom: -1px;
+    left: -0.5px;
+  }
+  
+  .corner-top {
+    position: absolute;
+    top: -1px;
+    right: -1.5px;
+  }
+  
+  .login-wrapper form {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .signup-inputs-container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    width: 80%;
+  }
+  
+  .signup-inputs-container > div {
+    width: 50%;
+  }
+
+  .login-input {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #bebebe;
+    margin-bottom: 20px;
+  }
+  
+  .inputs-container .login-input:last-child {
+    margin-bottom: 0px;
+  }
+  
+  ::placeholder {
+    color: 757575;
+    font-size: 16px;
+  }
+  
+  .signup-title {
+    margin-bottom: 20px;
+    color: #22c194;
+    font-size: 50px;
+    text-align: center;
+  }
+  
+  .login-next {
+    margin-top: 30px;
+    padding: 9px 42px;
+    background-color: #22c194;
+    border-radius: 15px;
+    border: 0;
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 500;
+  }
+  
+
+  .signup-link {
+    font-size: 14px;
+    color: #555555;
+    margin-top: 30px;
+  }
+
+  .signup-link a {
+    color: #21D19F;
+    font-weight: 500;
+  }
+
+  ::selection {
+    color: #757575;
+  }
+
+  .login-title {
+    font-weight: 500;
+    font-size: 48px;
+    color: #7293A0;
+    margin-bottom: 40px;
+  }
+
+  .login-inputs-container {
+    width: 80%;
+  }
+
+  .login-links {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555555;
+  }
+
+  .login-links a {
+    font-weight: 700;
+    font-size: 14px;
+    color: #7293A0;
+  }
+
+  .account-button {
+    padding: 9px 51px;
+    background: #7293A0;
+    border-radius: 15px;
+    color: white;
+    font-weight: 500;
+    margin-top: 30px;
+    transition: 0.3s;
+  }
+
+  .account-button:hover {
+    border: 1px solid #7293A0;
+    background-color: none;
+    color: black;
+  }
+
+  .login-link {
+    font-size: 14px;
+    color: #555555;
+    margin-top: 30px;
+  }
+
+  .login-link a {
+    color: #7293A0;
+    font-weight: 500;
+  }
+
+  .signup-title-organiser {
+    margin-bottom: 20px;
+    color: #7293A0;
+    font-size: 50px;
+    text-align: center;
+  }
