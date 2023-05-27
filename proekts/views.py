@@ -13,3 +13,10 @@ def home(request):
         }
 
     return render(request, 'home.html', context=context)
+
+
+def add_proekt(request):
+    context = {
+        'add_proekt_page': True,
+    }
+    return render(request, 'proekts/add_proekt.html', context=context)
