@@ -1,0 +1,83 @@
+{% load static %}
+<div class="navbar-bg bg-light">
+  <div class="" >
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'proekts:home' %}">
+          <img
+            src="{% static 'imgs/' %}"
+            alt="logo"
+            class="sidebar-logo"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse m-auto" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between">
+            <div class="d-flex flex-column flex-lg-row gap-lg-4">
+            {% if user.is_superuser %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'admin:index' %}" target="_blank">
+                Admin
+              </a>
+            </li>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <li class="nav-item ">
+                <p class="nav-link fw-bolder" id="rate">
+                    Balance: {{ user_balance.amount }}$
+                </p>
+            </li>
+
+
+
+            </div>
+            <div class="d-flex gap-2">
+              <li class="nav-item">
+                <a class="nav-link " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" ><img class="navbar-icon mi-custom3" src="{% static 'imgs/profile.svg' %}" alt="profile"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'users:logout' %}"><img class="navbar-icon" src="{% static 'imgs/logout.svg' %}" alt="logout"></a>
+              </li>
+            </div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Coming Soon! 🥳</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        This feature is coming soon! Be the first one to test it out 😎
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'users:login' %}"> Sign In </a>
+            </li>
+        {% endif %}
+
+      </ul>
+    </div>
+  </div>
+
+</nav>
+  </div>
+</div>
+

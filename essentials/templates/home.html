@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+{% if user.is_authenticated %}
+<h1>logined home page</h1>
+{% else %}
+<h1>Hey!</h1>
+<h2>To gain full access, please login <a href="{% url 'users:login' %}">here</a></h2>
+{% endif %}
+{% endblock %}
