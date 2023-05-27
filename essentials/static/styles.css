@@ -149,3 +149,10 @@
     color: #7293A0;
     font-weight: 500;
   }
+
+  .signup-title-organiser {
+    margin-bottom: 20px;
+    color: #7293A0;
+    font-size: 50px;
+    text-align: center;
+  }
