@@ -33,20 +33,28 @@ def sing_up_volunteer(request):
     if request.method == "POST":
         email = request.POST['email']
         password = request.POST['password']
+        first_name = request.POST['name']
+        surname = request.POST['surname']
+        phone_number = request.POST['phone']
+        skills = request.POST['skills']
 
         if User.objects.filter(email=email).exists():
             messages.error(request, "The email is already in use.")
-            return redirect("users:register")
+            return redirect("users:register_volunteer")
 
         try:
             password_validation.validate_password(password)
         except ValidationError as error_messages:
             messages.error(request, error_messages.messages[0])
-            return redirect("users:register")
+            return redirect("users:register_volunteer")
 
         user = User.objects.create_user(
             email=email,
-            password=password
+            password=password,
+            name=first_name,
+            surname=surname,
+            phone_number=phone_number,
+            skills=skills,
         )
 
         # balance = Balance(
