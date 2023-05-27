@@ -29,7 +29,7 @@ def sing_in(request):
     return render(request=request, template_name="accounts/login.html", context={"login_page": True})
 
 
-def sing_up(request):
+def sing_up_volunteer(request):
     if request.method == "POST":
         email = request.POST['email']
         password = request.POST['password']
@@ -60,7 +60,7 @@ def sing_up(request):
 
         return redirect("proekts:home")
 
-    return render(request, "accounts/register.html", context={"login_page": True})
+    return render(request, "accounts/register_volunteer.html", context={"login_page": True})
 
 
 @login_required
