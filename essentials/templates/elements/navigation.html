@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'proekts:home' %}">
           <img
-            src="{% static 'imgs/' %}"
+            src="{% static 'Frame.svg' %}"
             alt="logo"
             class="sidebar-logo"
           />
@@ -69,7 +69,7 @@
                 </div>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'users:login' %}"> Sign In </a>
+              <a class="nav-link" href="{% url 'users:login' %}"> Log In </a>
             </li>
         {% endif %}
 
