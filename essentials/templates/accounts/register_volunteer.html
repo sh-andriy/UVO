@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-6 col-md-10 mx-auto">
+            <div class="login-wrapper">
+                <img src="../../static/imgs/corner1.svg" class="corner-bottom" alt="" />
+                <img src="../../static/imgs/corner2.svg" class="corner-top" alt="" />
+            <form class="signup-form" method="POST">
+                {% csrf_token %}
+                <div class="nav-title">Become a <br /><b>Volunteer</b></div>
+              <div class="inputs-container">
+                <div>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  class="login-input"
+                  id="login-name-input"
+                />
+                <input
+                  type="text"
+                  placeholder="Surname"
+                  class="login-input"
+                  id="login-surname-input"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="login-input"
+                  id="login-email-input"
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  class="login-input"
+                  id="login-password-input"
+                />
+              </div>
+              <div>
+                <input
+                  type="tel"
+                  placeholder="PhoneNumber"
+                  class="login-input"
+                  id="login-tel-input"
+                />
+                <input
+                  type="text"
+                  placeholder="Skills"
+                  class="login-input"
+                  id="login-skills-input"
+                />
+                <input
+                  type="text"
+                  placeholder="Experience"
+                  class="login-input"
+                  id="login-experience-input"
+                />
+              </div>
+            </div>
+                <!-- <div class="mb-3">
+                    <label for="InputEmail" class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" id="InputEmail" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We won't share your email with anyone</div>
+                </div>
+                <div class="mb-3">
+                    <label for="InputPassword" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="InputPassword">
+                </div> -->
+                <button class="login-next">Next &#8594;</button>  
+                <div class="signup-link">
+                    Already a member? <a
+                        href="{% url "users:login" %}">Login here</a>
+                </div>                  
+            </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
