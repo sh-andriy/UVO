@@ -1,4 +1,4 @@
-/*===========================LOGIN-PAGE=====================================================*/
+/*===========================LOGIN/SIGNUP PAGES=====================================================*/
 * {
     font-family: "Montserrat";
   }
@@ -37,12 +37,17 @@
     align-items: center;
   }
   
-  .inputs-container {
+  .signup-inputs-container {
     display: flex;
     flex-direction: row;
-    width: 90%;
+    gap: 40px;
+    width: 80%;
   }
   
+  .signup-inputs-container > div {
+    width: 50%;
+  }
+
   .login-input {
     width: 100%;
     border: 0;
@@ -59,7 +64,7 @@
     font-size: 16px;
   }
   
-  .nav-title {
+  .signup-title {
     margin-bottom: 20px;
     color: #22c194;
     font-size: 50px;
@@ -85,5 +90,62 @@
 
   .signup-link a {
     color: #21D19F;
+    font-weight: 500;
+  }
+
+  ::selection {
+    color: #757575;
+  }
+
+  .login-title {
+    font-weight: 500;
+    font-size: 48px;
+    color: #7293A0;
+    margin-bottom: 40px;
+  }
+
+  .login-inputs-container {
+    width: 80%;
+  }
+
+  .login-links {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555555;
+  }
+
+  .login-links a {
+    font-weight: 700;
+    font-size: 14px;
+    color: #7293A0;
+  }
+
+  .account-button {
+    padding: 9px 51px;
+    background: #7293A0;
+    border-radius: 15px;
+    color: white;
+    font-weight: 500;
+    margin-top: 30px;
+    transition: 0.3s;
+  }
+
+  .account-button:hover {
+    border: 1px solid #7293A0;
+    background-color: none;
+    color: black;
+  }
+
+  .login-link {
+    font-size: 14px;
+    color: #555555;
+    margin-top: 30px;
+  }
+
+  .login-link a {
+    color: #7293A0;
     font-weight: 500;
   }
