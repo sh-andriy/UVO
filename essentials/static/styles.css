@@ -548,3 +548,116 @@
 .profileRepPass{
   margin-bottom: 25px;
 }
+
+.search-field {
+  box-sizing: border-box;
+  border: 1px solid #191919;
+  border-radius: 19px;
+  width: 60%;
+  height: 45px;
+  padding: 15px;
+  margin-top: 30px;
+  margin-left: 18%;
+}
+
+.categories{
+  display: flex;
+  justify-content: space-around;
+  overflow-x: scroll;
+}
+
+.category{
+  margin-top: 20px;
+  background-color: transparent;
+  border: 1px solid #22c194;
+  color: black;
+  border-radius: 7px;
+  padding: 10px 15px;
+  box-sizing: content-box;
+  transition :background-color 0.3s ease-in-out;
+}
+
+.category:hover{
+  background-color: #22c194;
+  color: black;
+}
+
+.card{
+  margin-top: 25px;
+}
+
+.add-proekt-wrapper {
+  box-sizing: border-box;
+  padding: 36px 0 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.17);
+  position: relative;
+  overflow: hidden;
+}
+
+.proekt-title {
+font-size: 32px;
+color: #22C194;
+}
+
+.add-proekt-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#project-name-input, #description-input {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #bebebe;
+    margin-bottom: 20px;
+}
+
+input::file-selector-button {
+  padding: 8px;
+  background: #22C194;
+  border-radius: 22px;
+  font-size: 16px;
+  color: #FFFFFF;
+  border: none;
+}
+
+#image-input {
+  width: 100%;
+}
+
+.category_select {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 22px;
+  background: #FFFFFF;
+border: 1px solid #BEBEBE;
+padding: 11px;
+}
+
+.proekt-text {
+  font-size: 16px;
+color: #757575;
+}
+
+.coin-proekt {
+  background: #FFFFFF;
+  border: 1px solid #BEBEBE;
+  border-radius: 17px;
+  padding: 4px;
+}
+
+.create-proekt {
+  padding: 8px 15px;
+background: #22C194;
+border-radius: 22px;
+border: 0;
+color: white;
+width: fit-content;
+}
