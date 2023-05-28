@@ -10,7 +10,8 @@ from django.contrib.auth import (
 )
 
 from .models import User
-# from .models import Balance
+from proekts.models import Balance
+
 
 
 def sing_in(request):
@@ -57,10 +58,10 @@ def sing_up_volunteer(request):
             skills=skills,
         )
 
-        # balance = Balance(
-        #     user=user
-        # )
-        # balance.save()
+        balance = Balance(
+            user=user
+        )
+        balance.save()
 
         login(request, user)
 
@@ -98,10 +99,8 @@ def sing_up_organiser(request):
             phone_number=phone_number,
         )
 
-        # balance = Balance(
-        #     user=user
-        # )
-        # balance.save()
+        balance = Balance(user=user, amount=10000)  # Set the initial balance to 10,000
+        balance.save()
 
         login(request, user)
 

@@ -5,8 +5,8 @@
 <div class="row mt-5">
     <div class="col-10 col-lg-8 mx-auto">
       <div class="add-proekt-wrapper">
-            <img src="../../static/imgs/corner1.svg" class="corner-bottom" alt="" />
-            <img src="../../static/imgs/corner2.svg" class="corner-top" alt="" />
+            <img src="{% static 'imgs/corner1.svg' %}" class="corner-bottom" alt="" />
+            <img src="{% static 'imgs/corner2.svg' %}" class="corner-top" alt="" />
         <form class="add-proekt-form d-flex flex-column justify-content-center" method="POST">
             {% csrf_token %}
             <div class="proekt-title mb-5">Add project</div>
@@ -16,7 +16,7 @@
               placeholder="Name of the project"
               class="project"
               id="project-name-input"
-              name="Name of the project"
+              name="title"
             />
             <input
               type="text"
@@ -39,18 +39,15 @@
             
 
             <select id="category-select" name="select" class="category_select">
-                <option value="animals">Animals</option>
-                <option value="health">Health</option>
-                <option value="war">War</option>
-                <option value="army">Army</option>
-                <option value="education">Education</option>
-                <option value="psychology">Psychology</option>
+                {% for category in categories %}
+                    <option value="{{ category.id }}">{{ category.name }}</option>
+                {% endfor %}
               </select><br>
               <div class="d-flex flex-row justify-content-between gap-3 align-items-center">
             <span class="proekt-text">How many coins the project is awarded? </span><input type="number" name="coin" class="coin-proekt">
           </div>
           </div>
-            <button type="submit" class="create-proekt mx-auto mt-3">Add project</button>              
+            <button type="submit" class="create-proekt mx-auto mt-3">Add project</button>
         </form>
         </div>
       </div>
