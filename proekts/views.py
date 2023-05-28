@@ -39,3 +39,33 @@ def add_project(request):
         'categories': categories,
     }
     return render(request, "proekts/add_proekt.html", context=context)
+
+
+@login_required
+def edit_project(request, project_id):
+    project = Project.objects.get(id=project_id)
+
+    if request.method == 'POST':
+        # Process the submitted form data and update the project
+        project.title = request.POST.get('title')
+        project.description = request.POST.get('description')
+        # Update other project fields as needed
+        project.save()
+
+        messages.success(request, 'Project updated successfully.')
+        return redirect('home')
+
+    context = {
+        'project': project,
+    }
+    return render(request, 'edit_project.html', context=context)
+
+
+@login_required
+def delete_project(request, project_id):
+    project = Project.objects.get(id=project_id)
+    project.delete()
+
+    messages.success(request, 'Project deleted successfully.')
+    return redirect('home')
+

@@ -13,7 +13,6 @@ from .models import User
 from proekts.models import Balance
 
 
-
 def sing_in(request):
     if request.user.is_authenticated:
         return redirect("proekts:home")
@@ -83,7 +82,7 @@ def sing_up_organiser(request):
 
         if User.objects.filter(email=email).exists():
             messages.error(request, "The email is already in use.")
-            return redirect("user")
+            return redirect("users:register_organiser")
 
         try:
             password_validation.validate_password(password)

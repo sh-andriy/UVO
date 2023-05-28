@@ -19,15 +19,6 @@
     {% block head %}{% endblock %}
 </head>
 <body>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        once: true,
-        duration: 400,
-        easing: 'ease-in-out',
-      });
-    </script>
-
     {% include 'elements/navigation.html' %}
     <div class="container ">
         {% if messages %}
