@@ -14,10 +14,18 @@
     <link rel="shortcut icon" href="../static/imgs/favicon.png" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     
     {% block head %}{% endblock %}
 </head>
 <body>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+
     {% include 'elements/navigation.html' %}
     <div class="container ">
         {% if messages %}
