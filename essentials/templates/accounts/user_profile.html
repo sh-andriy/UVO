@@ -3,7 +3,7 @@
 
 
 {% block body %}
-    <div class="profile">
+    <div class="profile"  data-aos="flip-up">
         <form method="POST">
             <div class="profileInfo">
                 <h2>PROFILE</h2>
@@ -25,5 +25,47 @@
                 <button type="submit" class="btn btn-outline-primary" name="update-password">Change</button>
             </div>
         </form>
+    </div>
+    <div class="achievements">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="achieve-card gap-3">
+                        <img src="../../static/imgs/achivka.svg" alt="">
+                        <div>Help animals 5 times</div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 gap-3">
+                    <div class="achieve-card gap-3">
+                        <img src="../../static/imgs/achivka.svg" alt="">
+                        <div>Help army</div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 gap-3">
+                    <div class="achieve-card gap-3">
+                        <img src="../../static/imgs/achivka.svg" alt="">
+                        <div>Help(clean) the enviroment</div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 gap-3">
+                    <div class="achieve-card gap-3">
+                        <img src="../../static/imgs/achivka.svg" alt="">
+                        <div>Help army 3 times</div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 gap-3">
+                    <div class="achieve-card gap-3">
+                        <img src="../../static/imgs/achivka.svg" alt="">
+                        <div>Volunteer for 2 months</div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 gap-3">
+                    <div class="achieve-card gap-3 achieveDone">
+                        <img src="../../static/imgs/achivka.svg" alt="">
+                        <div>Register</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

@@ -114,11 +114,11 @@
         <div class="col-12 col-lg-6">
             <div class="photos">
                 <div class="block1TopDiv mt-2">
-                    <img src="{% static './imgs/img1.png' %}">
+                    <img src="{% static './imgs/img1.png' %}" data-aos="fade-up-left">
                 </div>
                 <div class="block1LowerDiv">
-                    <img src="{% static './imgs/img2.png' %}">
-                    <img src="{% static './imgs/img3.png' %}">
+                    <img src="{% static './imgs/img2.png' %}"data-aos="fade-up-right">
+                    <img src="{% static './imgs/img3.png' %}"data-aos="fade-up-left">
                 </div>
             </div>
         </div>
@@ -128,11 +128,11 @@
 
 <div class="blockHome2 container-fluid">
     <div class="row">
-        <div class="col-md-6 block2_text1">
+        <div class="col-md-6 block2_text1" data-aos="fade-right">
             <h1>Lead the movement: organise the volunteering</h1>
             <a href="{% url 'users:register_organiser' %}" class="block2button">Become an organiser</a>
         </div>
-        <div class="col-md-6 block2_text2">
+        <div class="col-md-6 block2_text2" data-aos="fade-left">
             <h4>Elevate your impact as a volunteer project organiser with Vnesok. Our platform empowers you with support to bring your vision to life.</h4>
         </div>
         <div class="photoesCarousel">
