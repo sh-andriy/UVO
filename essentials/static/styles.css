@@ -12,6 +12,18 @@
   padding: 10px 20px;
 }
 
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#navbarSupportedContent{
+  display: flex;
+  align-items: center;
+
+}
+
 .blockHome1 {
   background-color: #1a1a1a;
   height: 100%;
@@ -96,6 +108,11 @@
   }
   .black-bg3 {
     height: 115vh;
+  }
+
+  .sidebar-logo{
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -530,82 +547,4 @@
 }
 .profileRepPass{
   margin-bottom: 25px;
-}
-
-/*================================ADD PROEKT==================================================*/
-
-.add-proekt-wrapper {
-  box-sizing: border-box;
-  padding: 36px 0 72px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 7px;
-  background-color: #ffffff;
-  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.17);
-  position: relative;
-  overflow: hidden;
-}
-
-.proekt-title {
-font-size: 32px;
-color: #22C194;
-}
-
-.add-proekt-inputs {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#project-name-input, #description-input {
-    width: 100%;
-    border: 0;
-    border-bottom: 1px solid #bebebe;
-    margin-bottom: 20px;
-}
-
-input::file-selector-button {
-  padding: 8px;
-  background: #22C194;
-  border-radius: 22px;
-  font-size: 16px;
-  color: #FFFFFF;
-  border: none;
-}
-
-#image-input {
-  width: 100%;
-}
-
-.category_select {
-  width: 100%;
-  margin-top: 20px;
-  border-radius: 22px;
-  background: #FFFFFF;
-border: 1px solid #BEBEBE;
-padding: 11px;
-}
-
-.proekt-text {
-  font-size: 16px;
-color: #757575;
-}
-
-.coin-proekt {
-  background: #FFFFFF;
-  border: 1px solid #BEBEBE;
-  border-radius: 17px;
-  padding: 4px;
-}
-
-.create-proekt {
-  padding: 8px 15px;
-background: #22C194;
-border-radius: 22px;
-border: 0;
-color: white;
-width: fit-content;
 }

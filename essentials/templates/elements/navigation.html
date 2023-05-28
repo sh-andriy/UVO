@@ -1,65 +1,48 @@
 {% load static %}
 <div class="navbar-bg">
-    <nav class="navbar navbar-expand-lg navbar-custom">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'proekts:home' %}">
-          <img
-            src="{% static 'Frame.svg' %}"
-            alt="logo"
-            class="sidebar-logo"
-          />
-        </a>
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'proekts:home' %}">
+        <img src="{% static 'Frame.svg' %}" alt="logo" class="sidebar-logo" />
+      </a>
 
-        <button
-          class="navbar-toggler text-white"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse m-auto" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between">
-            <div class="d-flex flex-column flex-lg-row gap-lg-4">
+      {% if user.is_authenticated %}
+      <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             {% if user.is_superuser %}
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'admin:index' %}" target="_blank">
-                Admin
-              </a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'admin:index' %}" target="_blank">
+              Admin
+            </a>
+          </li>
             {% endif %}
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-                <p class="nav-link fw-bolder" id="rate">
-                    Balance: {{ user_balance.amount }}$
-                </p>
-            </li>
-            </div>
-            <li class="nav-item text-light">
-              <a class="nav-link" href="{% url 'users:profile' %}"> Profile </a>
-            </li>
-
-            <div class="d-flex gap-2">
-
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'users:logout' %}"><img class="navbar-icon" src="{% static 'imgs/logout.svg' %}" alt="logout"></a>
-              </li>
-            </div>
-            {% else %}
-            <li class="nav-item text-light">
-              <a class="nav-link" href="{% url 'users:login' %}"> Log In </a>
-            </li>
-            <li class="nav-item text-light">
-              <a class="nav-link" href="{% url 'proekts:add_proekt' %}"> Add Proekt </a>
-            </li>
-
-            {% endif %}
-          </ul>
-        </div>
+          <li class="nav-item">
+            <p class="nav-link fw-bolder p-0 m-0" id="rate">
+              Balance: {{ user_balance.amount }}$
+            </p>
+          </li>
+        </ul>
+        
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-light"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              My Account
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="{% url 'users:profile' %}">Profile</a></li>
+              <li><a class="dropdown-item" href="{% url 'proekts:add_proekt' %}">Add project</a></li>
+              <li><a class="dropdown-item" href="{% url 'users:logout' %}">Log out</a></li>
+            </ul>
+          </li>
+          {% endif %}
+        </ul>
       </div>
-    </nav>
-
+    </div>
+  </nav>
 </div>
