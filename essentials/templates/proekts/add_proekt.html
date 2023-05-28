@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block body %}
-<div class="row">
-    <div class="col-lg-6 col-md-10 mx-auto">
+<div class="row mt-5">
+    <div class="col-10 col-lg-8 mx-auto">
+      <div class="add-proekt-wrapper">
             <img src="../../static/imgs/corner1.svg" class="corner-bottom" alt="" />
             <img src="../../static/imgs/corner2.svg" class="corner-top" alt="" />
-        <form class="signup-form" method="POST">
+        <form class="add-proekt-form" method="POST">
             {% csrf_token %}
-            <div class="signup-title">Add a <br /><b>project</b></div>
-          <div class="signup-inputs-container">
-            <div>
+            <div class="proekt-title">Add project</div>
+          <div class="add-proekt-inputs">
             <input
               type="text"
               placeholder="Name of the project"
@@ -48,10 +48,10 @@
               </select><br>
             <span>How many coins the project is awarded? </span><input type="number" name="coin">
           </div>
-        </div>
             <button type="submit" class="login-next">Add project</button>              
         </form>
         </div>
+      </div>
     </div>
 </div>
 {% endblock %}
