@@ -38,10 +38,11 @@
                 </p>
             </li>
             </div>
+            <li class="nav-item text-light">
+              <a class="nav-link" href="{% url 'users:profile' %}"> Profile </a>
+            </li>
             <div class="d-flex gap-2">
-              <li class="nav-item">
-                <a class="nav-link" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" ><img class="navbar-icon mi-custom3" src="{% static 'imgs/profile.svg' %}" alt="profile"></a>
-              </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'users:logout' %}"><img class="navbar-icon" src="{% static 'imgs/logout.svg' %}" alt="logout"></a>
               </li>
@@ -53,6 +54,7 @@
             <li class="nav-item text-light">
               <a class="nav-link" href="{% url 'proekts:add_proekt' %}"> Add Proekt </a>
             </li>
+
             {% endif %}
           </ul>
         </div>

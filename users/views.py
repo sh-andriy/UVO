@@ -113,6 +113,13 @@ def sing_up_organiser(request):
 
 
 @login_required
+def profile(request):
+    context = {
+        'user_profile_page': True,
+    }
+    return render(request, 'accounts/user_profile.html', context=context)
+
+@login_required
 def sign_out(request):
     logout(request)
     return redirect("proekts:home")
