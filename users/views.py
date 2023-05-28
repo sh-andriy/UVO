@@ -112,12 +112,60 @@ def sing_up_organiser(request):
     return render(request, "accounts/register_organisator.html", context={"login_page": True})
 
 
+# def update_user(request):
+#     if request.user.is_authenticated:
+#         user = request.user
+#         if request.method == "POST":
+#             if 'update-data' in request.POST:
+#                 email = request.POST.get('email')
+#                 update = False
+#                 if email != user.email:
+#                     if User.objects.filter(email=email).exists():
+#                         messages.error(request, "Sorry email already in use, let's try another one")
+#                         return redirect("accounts:update")
+#                     user.email = email
+#                     update = True
+#
+#                 if update:
+#                     user.save()
+#                     messages.success(request, "Your account has been updated successfully!")
+#                 return redirect("accounts:update")
+#
+#             elif 'update-password' in request.POST:
+#                 old_password = request.POST.get('old_password')
+#                 new_password1 = request.POST.get('new_password1')
+#                 new_password2 = request.POST.get('new_password2')
+#                 if not user.check_password(old_password):
+#                     messages.error(request, "Please enter your old password correctly..")
+#                     return redirect("accounts:update")
+#                 elif new_password1 != new_password2:
+#                     messages.error(request, "The new passwords do not match..")
+#                     return redirect("accounts:update")
+#                 else:
+#                     user.set_password(new_password1)
+#                     user.save()
+#                     messages.success(request, "Your password has been updated successfully")
+#                     return redirect("quizzes:home")
+#         else:
+#             return render(request, "accounts/user_profile.html", context={'user': user, 'account_page': True})
+#     else:
+#         return redirect('quizzes:home')
+
 @login_required
 def profile(request):
     context = {
         'user_profile_page': True,
     }
     return render(request, 'accounts/user_profile.html', context=context)
+
+
+@login_required
+def profile_volunteer(request):
+    context = {
+        'user_profile_volunteer_page': True,
+    }
+    return render(request, 'accounts/user_profile_volunteer.html', context=context)
+
 
 @login_required
 def sign_out(request):
