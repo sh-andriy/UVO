@@ -6,11 +6,11 @@
 <h1>logined home page</h1>
 {% else %}
 <!-- <h2>To gain full access, please login <a href="{% url 'users:login' %}">here</a></h2> -->
+<div class="black-bg"></div>
 <div class="blockHome1">
-    <div class="black-bg"></div>
     <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-12 col-lg-6">
             <div class="leftDiv mt-5">
                 <div>
                     <h1 class="leftDiv_mainText mt-5"><span class="greenText">Vnesok</span> - for <br>better tomorrow</h1>
@@ -18,12 +18,12 @@
                 <h4>Join us to make a difference. Find meaningful projects, connect with like-minded volunteers, and create a positive impact.</h4>
                 <div class="homeButtons">
                     <button class="becomeVol"><a href="{% url 'users:register_volunteer' %}">Become a volunteer</a></button>
-                    <button class="becomeOrg">Become an organiser</button>
+                    <button class="becomeOrg mb-5">Become an organiser</button>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-12 col-lg-6">
             <div class="photos">
                 <div class="block1TopDiv mt-2">
                     <img src="{% static './imgs/img1.png' %}">
@@ -42,18 +42,18 @@
     <div class="row">
         <div class="col-md-6 block2_text1">
             <h1>Lead the movement: organise the volunteering</h1>
-            <button class="block2button">Become an organiser</button>
+            <button class="block2button mb-5">Become an organiser</button>
         </div>
         <div class="col-md-6 block2_text2">
             <h4>Elevate your impact as a volunteer project organiser with Vnesok. Our platform empowers you with support to bring your vision to life.</h4>
         </div>
-        <div class="photoesCarusel">
+        <div class="photoesCarousel">
             <div class="container p-0">
                 <div class="row mt-5">
-                    <img src="{% static './imgs/main-1.png' %}" class="col-3">
-                    <img src="{% static './imgs/main-2.png' %}" class="col-3">
-                    <img src="{% static './imgs/main-3.png' %}" class="col-3">
-                    <img src="{% static './imgs/main-4.png' %}" class="col-3">
+                    <img src="{% static './imgs/main-1.png' %}" class="col-6 col-md-3">
+                    <img src="{% static './imgs/main-2.png' %}" class="col-6 col-md-3">
+                    <img src="{% static './imgs/main-3.png' %}" class="col-6 col-md-3">
+                    <img src="{% static './imgs/main-4.png' %}" class="col-6 col-md-3">
                 </div>
             </div>
         </div>
@@ -62,12 +62,14 @@
 
 
 
-<div class="blockHome3 container-fluid">
+<div class="blockHome3">
+    <!-- <div class="black-bg3"></div> -->
+    <div class="container">
     <div class="row">
         <div class="col-10 block3_text1">
-            <h1 class="mb-5">Lead the movement: inspire through organized volunteering</h1>
+            <h1 class="mb-5 mt-5">Lead the movement: inspire through organized volunteering</h1>
             <h4>As a volunteer project organiser with Vnesok, you have the opportunity to create impactful initiatives that ignite change. Harness your leadership skills, mobilize volunteers, and make a lasting difference in your community. Join us today and be the driving force behind a movement that transforms lives and shapes a better future.</h4>
-            <button class="block3button mt-5">Become a volunteer</button>
+            <button class="block3button mt-5 mb-5">Become a volunteer</button>
         </div>
         <div class="photo-grid">
             <div><img src="{% static './imgs/img4.png' %}"></div>
@@ -75,6 +77,7 @@
             <div><img src="{% static './imgs/img6.png' %}"></div>
         </div>
     </div>
+</div>
 </div>
 {% endif %}
 {% endblock %}
