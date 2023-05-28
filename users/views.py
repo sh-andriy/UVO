@@ -160,14 +160,6 @@ def profile(request):
 
 
 @login_required
-def profile_volunteer(request):
-    context = {
-        'user_profile_volunteer_page': True,
-    }
-    return render(request, 'accounts/user_profile_volunteer.html', context=context)
-
-
-@login_required
 def sign_out(request):
     logout(request)
     return redirect("proekts:home")
