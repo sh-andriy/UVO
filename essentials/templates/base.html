@@ -18,18 +18,18 @@
 </head>
 <body>
     {% include 'elements/navigation.html' %}
-    <div class="container">
+    <div class="container ">
         {% if messages %}
             {% for message in messages %}
                 {% if message.tags ==  'success' %}
-                <div class="row">
+                <div class="row mt-3">
                     <div class="alert alert-success alert-dismissible fade show col-10 offset-1" role="alert">
                         <strong>Hooray! </strong> {{ message }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 </div>
                 {% else %}
-                <div class="row">
+                <div class="row mt-3">
                     <div class="alert alert-danger alert-dismissible fade show col-10 offset-1" role="alert">
                         <strong>Oops! </strong> {{ message }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

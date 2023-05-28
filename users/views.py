@@ -71,6 +71,47 @@ def sing_up_volunteer(request):
     return render(request, "accounts/register_volunteer.html", context={"login_page": True})
 
 
+def sing_up_organiser(request):
+
+    if request.method == "POST":
+        email = request.POST['email']
+        password = request.POST['password']
+        first_name = request.POST['name']
+        surname = request.POST['surname']
+        phone_number = request.POST['phone']
+
+        if User.objects.filter(email=email).exists():
+            messages.error(request, "The email is already in use.")
+            return redirect("user")
+
+        try:
+            password_validation.validate_password(password)
+        except ValidationError as error_messages:
+            messages.error(request, error_messages.messages[0])
+            return redirect("users:register_volunteer")
+
+        user = User.objects.create_user(
+            email=email,
+            password=password,
+            name=first_name,
+            surname=surname,
+            phone_number=phone_number,
+        )
+
+        # balance = Balance(
+        #     user=user
+        # )
+        # balance.save()
+
+        login(request, user)
+
+        messages.success(request, "Welcome, home :)")
+
+        return redirect("proekts:home")
+
+    return render(request, "accounts/register_organisator.html", context={"login_page": True})
+
+
 @login_required
 def sign_out(request):
     logout(request)
