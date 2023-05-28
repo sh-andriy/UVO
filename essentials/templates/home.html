@@ -106,7 +106,7 @@
                 <h4>Join us to make a difference. Find meaningful projects, connect with like-minded volunteers, and create a positive impact.</h4>
                 <div class="homeButtons">
                     <button class="becomeVol"><a href="{% url 'users:register_volunteer' %}">Become a volunteer</a></button>
-                    <button class="becomeOrg mb-5">Become an organiser</button>
+                    <button class="becomeOrg mb-5"><a href="{% url 'users:register_organiser' %}">Become an organiser</a></button>
                 </div>
             </div>
         </div>
@@ -130,7 +130,7 @@
     <div class="row">
         <div class="col-md-6 block2_text1">
             <h1>Lead the movement: organise the volunteering</h1>
-            <button class="block2button mb-5">Become an organiser</button>
+            <button class="block2button mb-5"><a href="{% url 'users:register_organiser' %}">Become a organiser</a></button>
         </div>
         <div class="col-md-6 block2_text2">
             <h4>Elevate your impact as a volunteer project organiser with Vnesok. Our platform empowers you with support to bring your vision to life.</h4>
@@ -157,7 +157,7 @@
         <div class="col-10 block3_text1">
             <h1 class="mb-5 mt-5">Lead the movement: inspire through organized volunteering</h1>
             <h4>As a volunteer project organiser with Vnesok, you have the opportunity to create impactful initiatives that ignite change. Harness your leadership skills, mobilize volunteers, and make a lasting difference in your community. Join us today and be the driving force behind a movement that transforms lives and shapes a better future.</h4>
-            <button class="block3button mt-5 mb-5">Become a volunteer</button>
+            <button class="block3button mt-5 mb-5"><a href="{% url 'users:register_volunteer' %}">Become a volunteer</a></button>
         </div>
         <div class="photo-grid">
             <div><img src="{% static './imgs/img4.png' %}"></div>
