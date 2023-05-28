@@ -7,9 +7,9 @@
       <div class="add-proekt-wrapper">
             <img src="../../static/imgs/corner1.svg" class="corner-bottom" alt="" />
             <img src="../../static/imgs/corner2.svg" class="corner-top" alt="" />
-        <form class="add-proekt-form" method="POST">
+        <form class="add-proekt-form d-flex flex-column justify-content-center" method="POST">
             {% csrf_token %}
-            <div class="proekt-title">Add project</div>
+            <div class="proekt-title mb-5">Add project</div>
           <div class="add-proekt-inputs">
             <input
               type="text"
@@ -46,9 +46,11 @@
                 <option value="education">Education</option>
                 <option value="psychology">Psychology</option>
               </select><br>
-            <span>How many coins the project is awarded? </span><input type="number" name="coin">
+              <div class="d-flex flex-row justify-content-between gap-3 align-items-center">
+            <span class="proekt-text">How many coins the project is awarded? </span><input type="number" name="coin" class="coin-proekt">
           </div>
-            <button type="submit" class="login-next">Add project</button>              
+          </div>
+            <button type="submit" class="create-proekt mx-auto mt-3">Add project</button>              
         </form>
         </div>
       </div>

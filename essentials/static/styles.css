@@ -480,3 +480,46 @@ color: #22C194;
     border-bottom: 1px solid #bebebe;
     margin-bottom: 20px;
 }
+
+input::file-selector-button {
+  padding: 8px;
+  background: #22C194;
+  border-radius: 22px;
+  font-size: 16px;
+  color: #FFFFFF;
+  border: none;
+}
+
+#image-input {
+  width: 100%;
+}
+
+.category_select {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 22px;
+  background: #FFFFFF;
+border: 1px solid #BEBEBE;
+padding: 11px;
+}
+
+.proekt-text {
+  font-size: 16px;
+color: #757575;
+}
+
+.coin-proekt {
+  background: #FFFFFF;
+  border: 1px solid #BEBEBE;
+  border-radius: 17px;
+  padding: 4px;
+}
+
+.create-proekt {
+  padding: 8px 15px;
+background: #22C194;
+border-radius: 22px;
+border: 0;
+color: white;
+width: fit-content;
+}
