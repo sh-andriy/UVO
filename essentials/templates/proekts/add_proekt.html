@@ -2,7 +2,56 @@
 {% load static %}
 
 {% block body %}
-    <form method="POST">
+<div class="row">
+    <div class="col-lg-6 col-md-10 mx-auto">
+            <img src="../../static/imgs/corner1.svg" class="corner-bottom" alt="" />
+            <img src="../../static/imgs/corner2.svg" class="corner-top" alt="" />
+        <form class="signup-form" method="POST">
+            {% csrf_token %}
+            <div class="signup-title">Add a <br /><b>project</b></div>
+          <div class="signup-inputs-container">
+            <div>
+            <input
+              type="text"
+              placeholder="Name of the project"
+              class="project"
+              id="project-name-input"
+              name="Name of the project"
+            />
+            <input
+              type="text"
+              placeholder="Description"
+              class="description-input"
+              id="description-input"
+              name="description"
+            />
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
+            $(document).ready(function() {
+                $("#image-input").on("change", function() {
+                var fileName = $(this).val().split("\\").pop();
+                $("#selected-image-name").text(fileName);
+                });
+            });
+            </script>
+            <input type="file" id="image-input" accept="image/*">
+            <span id="selected-image-name"></span>
+            
 
-    </form>
+            <select id="category-select" name="select" class="category_select">
+                <option value="animals">Animals</option>
+                <option value="health">Health</option>
+                <option value="war">War</option>
+                <option value="army">Army</option>
+                <option value="education">Education</option>
+                <option value="psychology">Psychology</option>
+              </select><br>
+            <span>How many coins the project is awarded? </span><input type="number" name="coin">
+          </div>
+        </div>
+            <button type="submit" class="login-next">Add project</button>              
+        </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
