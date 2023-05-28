@@ -1,6 +1,12 @@
 .nav-item{
     color: white;
 }
+
+.navbar-nav .nav-link {
+  color: white;
+}
+
+
 .navbar{
     background-color: #1A1A1A;
     padding: 10px 20px;
@@ -233,7 +239,7 @@
   }
   
   ::placeholder {
-    color: 757575;
+    color: #757575;
     font-size: 16px;
   }
   
