@@ -151,6 +151,41 @@ def sing_up_organiser(request):
 
 @login_required
 def profile(request):
+    if request.method == "POST":
+        if "update-data" in request.POST:
+            name = request.POST.get("name")
+            email = request.POST.get("email")
+            tel = request.POST.get("tel")
+
+            user = request.user
+            user.name = name
+            user.email = email
+            user.phone_number = tel
+            user.save()
+
+            messages.success(request, "Profile updated successfully.")
+            return redirect("users:profile")
+
+        elif "update-password" in request.POST:
+            old_password = request.POST.get("oldPassword")
+            new_password = request.POST.get("newPassword")
+            repeat_password = request.POST.get("repeatNewPassword")
+
+            user = request.user
+            if not user.check_password(old_password):
+                messages.error(request, "Incorrect old password.")
+                return redirect("users:profile")
+
+            if new_password != repeat_password:
+                messages.error(request, "New passwords do not match.")
+                return redirect("users:profile")
+
+            user.set_password(new_password)
+            user.save()
+
+            messages.success(request, "Password updated successfully.")
+            return redirect("users:profile")
+
     context = {
         'user_profile_page': True,
     }

@@ -1,27 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}Profile{% endblock %}
 
 {% block body %}
     <div class="profile">
         <form method="POST">
+            {% csrf_token %}
             <div class="profileInfo">
                 <h2>PROFILE</h2>
                 <img src="{% static 'Vector.svg' %}" alt="profile logo">
-                <input type="name" placeholder="Name" name="name" class="profile_name">
-                <input type="email" placeholder="Email" name="email" class="profile_email">
-                <input type="tel" placeholder="Mobile Phone" name='tel'class="profile_tel">
+                <input type="text" placeholder="Name" name="name" class="profile_name" value="{{ user.name }}">
+                <input type="email" placeholder="Email" name="email" class="profile_email" value="{{ user.email }}">
+                <input type="tel" placeholder="Mobile Phone" name="tel" class="profile_tel" value="{{ user.phone_number }}">
                 <button type="submit" class="btn btn-outline-primary" name="update-data">Save</button>
             </div>
         </form>
         <form method="POST">
+            {% csrf_token %}
             <div class="changePass">
                 <h5>Old Password:</h5>
-                <input type="number" name="oldPassword" class="profileOldPass">
+                <input type="password" name="oldPassword" class="profileOldPass">
                 <h5>New Password:</h5>
-                <input type="number" name="newPassword" class="profileNewPass">
+                <input type="password" name="newPassword" class="profileNewPass">
                 <h5>Repeat New Password:</h5>
-                <input type="number" name="repeatNewPassword" class="profileRepPass">
+                <input type="password" name="repeatNewPassword" class="profileRepPass">
                 <button type="submit" class="btn btn-outline-primary" name="update-password">Change</button>
             </div>
         </form>
